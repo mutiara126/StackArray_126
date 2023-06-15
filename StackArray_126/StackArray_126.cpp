@@ -30,26 +30,70 @@ public:
 		if (empty()) { //step 1
 			cout << "\nStack is empty. Cannot pop." << endl;
 			return; //1.b
+        }
 
-		}
-
-		cout << "\nThe popped element is: " << stack_array[top] << endl; //step 2
+     	cout << "\nThe popped element is: " << stack_array[top] << endl; //step 2
 		top--;  //step 3 decrement
 	}
 
-	//method for check if data is empty
+    //method for check if data is empty
 	bool empty() {
 		return (top == -1);
 	}
 	void display() {
 		if (empty()) {
-			cout << "\nStack is empty." << endl
-
+			cout << "\nStack is empty." << endl;
+     	}
+		else {
+			for (int top = 0; top <= top; top++) {
+				cout << stack_array[top] << endl;
+			}
 		}
 
 	}
-	
 };
+
+int main() {
+	StackArray s;
+	while (true) {
+		cout << endl;
+		cout << "\n***Stack Menu***\n";
+		cout << "1. push\n";
+		cout << "2. pop\n";
+		cout << "3. Display\n";
+		cout << "4. Exit\n";
+		cout << "5. \nEnter your choise: ";
+		string input;
+		getline(cin, input);
+		char ch = (input.empty() ? '0' : input[0]);
+		switch (ch) {
+		case '1': {
+			cout << "\nEnter a element: ";
+			string element;
+			getline(cin, element);
+			s.push(element);
+			break;
+		}
+		case '2' :
+			if (s.empty()) {
+				cout << "\nStack is empty." << endl;
+				break;
+			}
+			s.pop();
+			break;
+		case '3' :
+			s.display();
+			break;
+		case '4' :
+			return 0;
+		default :
+			cout << "\nInvalid choise." << endl;
+			break;
+
+        }
+
+	}
+}
 
 
 
